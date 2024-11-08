@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../screens/notes_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -47,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -56,11 +57,10 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               // Teks selamat datang
               Text(
-                'Welcome to My Diary',
-                style: TextStyle(
-                  fontFamily:
-                      'DancingScript', // Nama font yang sudah ditambahkan
-                  fontSize: 30,
+                'My Diary',
+                style: GoogleFonts.dancingScript(
+                  fontSize:
+                      56, // Sesuaikan ukuran font agar terlihat lebih mencolok
                   fontWeight: FontWeight.bold,
                   color: const Color.fromARGB(221, 0, 0, 0),
                 ),
@@ -75,7 +75,15 @@ class _LoginPageState extends State<LoginPage> {
               // Teks login
               Text(
                 'Login',
-                style: Theme.of(context).textTheme.headlineMedium,
+                style: GoogleFonts.poppins(
+                  fontSize: 32, // Ukuran font menonjol untuk judul
+                  fontWeight:
+                      FontWeight.w600, // Sedikit tebal untuk kesan modern
+                  color: Colors.orange
+                      .shade700, // Warna oranye untuk kontras yang menarik
+                  letterSpacing:
+                      1.5, // Memberi jarak antar huruf untuk estetika
+                ),
               ),
               SizedBox(height: 24),
 

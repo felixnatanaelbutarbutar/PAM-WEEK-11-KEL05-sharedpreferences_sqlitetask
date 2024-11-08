@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../models/note.dart';
 import '../helpers/database_helper.dart';
 
@@ -51,8 +52,15 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text(_isEditing ? 'Edit Note' : 'New Note'),
+        title: Text(
+          _isEditing ? 'Edit Note' : 'New Note',
+          style: GoogleFonts.dancingScript(
+            textStyle: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+          ),
+        ),
+        backgroundColor: Colors.green[700],
         actions: [
           IconButton(
             icon: Icon(Icons.save),
@@ -63,30 +71,79 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Title Input
             TextField(
               controller: _titleController,
+              style: GoogleFonts.dancingScript(
+                textStyle: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black87),
+              ),
               decoration: InputDecoration(
                 labelText: 'Title',
-                border: OutlineInputBorder(),
+                labelStyle: TextStyle(color: Colors.green[700]),
+                filled: true,
+                fillColor: Colors.white,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide(color: Colors.green[700]!),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide(color: Colors.green[700]!),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide(color: Colors.green[400]!),
+                ),
               ),
             ),
             SizedBox(height: 16),
+
+            // Content Input
             Expanded(
               child: TextField(
                 controller: _contentController,
                 maxLines: null,
                 expands: true,
                 textAlignVertical: TextAlignVertical.top,
+                style: GoogleFonts.dancingScript(
+                  textStyle: TextStyle(fontSize: 18, color: Colors.black87),
+                ),
                 decoration: InputDecoration(
                   labelText: 'Content',
                   alignLabelWithHint: true,
-                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.green[700]),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Colors.green[700]!),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Colors.green[700]!),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Colors.green[400]!),
+                  ),
                 ),
               ),
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: _saveNote,
+        label: Text(
+          _isEditing ? 'Update' : 'Save',
+          style: GoogleFonts.dancingScript(
+            textStyle: TextStyle(fontSize: 18),
+          ),
+        ),
+        icon: Icon(Icons.save),
+        backgroundColor: Colors.green[700],
       ),
     );
   }
