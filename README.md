@@ -1,16 +1,41 @@
-# sharedpreferences_sqlitetask
+# My Diary
 
-A new Flutter project.
+**My Diary** is a simple Flutter application that allows users to create, read, update, and delete daily notes. The app uses **SQLite** for local storage and **Shared Preferences** for managing user settings such as theme preferences.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Create, update, and delete notes.
+- View notes in a list with sorting by date.
+- Store notes locally in SQLite database.
+- Manage theme settings using Shared Preferences (light/dark mode).
 
-A few resources to get you started if this is your first Flutter project:
+## Requirements
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter (>= 3.0.0)
+- Dart (>= 2.18)
+- SQLite (via `sqflite` package)
+- Shared Preferences (via `shared_preferences` package)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/felixnatanaelbutarbutar/PAM-WEEK-11-KEL05-sharedpreferences_sqlitetask.git
+
+   ```
+
+2. Navigate to the project directory:
+    ```bash
+    cd my_diary
+    ```
+
+3. Install the dependencies:
+    ```bash
+    flutter pub get
+    ```
+
+4. Run the application:
+    ```bash
+    flutter run
+    ```
