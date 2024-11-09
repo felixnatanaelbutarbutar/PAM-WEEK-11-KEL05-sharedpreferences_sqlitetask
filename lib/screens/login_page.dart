@@ -68,23 +68,23 @@ class _LoginPageState extends State<LoginPage> {
 
               // Ikon buku
               Image.asset(
-                'assets/images/book.jpg', // Path ke gambar book.jpg
+                'assets/images/diary.png', 
                 width: 120, // Sesuaikan lebar gambar
                 height: 120, // Sesuaikan tinggi gambar
               ),
               // Teks login
-              Text(
-                'Login',
-                style: GoogleFonts.poppins(
-                  fontSize: 32, // Ukuran font menonjol untuk judul
-                  fontWeight:
-                      FontWeight.w600, // Sedikit tebal untuk kesan modern
-                  color: Colors.orange
-                      .shade700, // Warna oranye untuk kontras yang menarik
-                  letterSpacing:
-                      1.5, // Memberi jarak antar huruf untuk estetika
-                ),
-              ),
+              // Text(
+              //   'Login',
+              //   style: GoogleFonts.poppins(
+              //     fontSize: 32, // Ukuran font menonjol untuk judul
+              //     fontWeight:
+              //         FontWeight.w600, // Sedikit tebal untuk kesan modern
+              //     color: Colors.orange
+              //         .shade700, // Warna oranye untuk kontras yang menarik
+              //     letterSpacing:
+              //         1.5, // Memberi jarak antar huruf untuk estetika
+              //   ),
+              // ),
               SizedBox(height: 24),
 
               // Kolom teks username

@@ -56,7 +56,8 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       );
                     } else {
-                      // Show login screen or other appropriate action
+                      // Arahkan ke halaman login
+                      Navigator.pushNamed(context, '/login');
                     }
                   },
                   child: Text(
