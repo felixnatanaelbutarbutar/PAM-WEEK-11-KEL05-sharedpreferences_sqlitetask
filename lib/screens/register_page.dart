@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../screens/notes_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -59,17 +60,25 @@ class _RegisterPageState extends State<RegisterPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.person_add,
-                size: 80,
-                color: Colors.orange,
-              ),
-              SizedBox(height: 24),
+              // Title
               Text(
-                'Register',
-                style: Theme.of(context).textTheme.headlineMedium,
+                'My Diary',
+                style: GoogleFonts.dancingScript(
+                  fontSize: 56,
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(221, 0, 0, 0),
+                ),
+              ),
+
+              // Icon
+              Image.asset(
+                'assets/images/diary.png',
+                width: 120,
+                height: 120,
               ),
               SizedBox(height: 24),
+
+              // Username input
               TextField(
                 controller: _usernameController,
                 decoration: InputDecoration(
@@ -81,6 +90,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               SizedBox(height: 20),
+
+              // Password input
               TextField(
                 controller: _passwordController,
                 obscureText: true,
@@ -93,12 +104,16 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               SizedBox(height: 16),
+
+              // Error message
               if (_errorMessage.isNotEmpty)
                 Text(
                   _errorMessage,
                   style: TextStyle(color: Colors.red),
                 ),
               SizedBox(height: 30),
+
+              // Register button
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -111,11 +126,16 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Text('Register', style: TextStyle(fontSize: 18)),
               ),
               SizedBox(height: 20),
+
+              // Login button
               TextButton(
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/login');
                 },
-                child: Text('Sudah punya akun? Login disini!'),
+                child: Text(
+                  'Already have an account? Login here',
+                  style: TextStyle(fontSize: 16, color: Colors.orange),
+                ),
               ),
             ],
           ),
