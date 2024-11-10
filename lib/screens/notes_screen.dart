@@ -49,7 +49,9 @@ class _NotesScreenState extends State<NotesScreen> {
           style: GoogleFonts.dancingScript(
             fontSize: 42,
             fontWeight: FontWeight.w600,
-            color: Colors.black,
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.white
+                : Colors.black,
           ),
         ),
         actions: [
@@ -129,7 +131,8 @@ class _NotesScreenState extends State<NotesScreen> {
                         context: context,
                         builder: (context) => AlertDialog(
                           title: Text('Delete Note'),
-                          content: Text('Are you sure you want to delete this note?'),
+                          content: Text(
+                              'Are you sure you want to delete this note?'),
                           actions: [
                             TextButton(
                               onPressed: () => Navigator.pop(context, false),

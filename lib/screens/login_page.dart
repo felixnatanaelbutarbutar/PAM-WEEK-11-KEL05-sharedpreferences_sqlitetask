@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -59,16 +59,17 @@ class _LoginPageState extends State<LoginPage> {
               Text(
                 'My Diary',
                 style: GoogleFonts.dancingScript(
-                  fontSize:
-                      56, // Sesuaikan ukuran font agar terlihat lebih mencolok
+                  fontSize: 56, // Ukuran font besar
                   fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(221, 0, 0, 0),
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white
+                      : const Color.fromARGB(221, 0, 0, 0),
                 ),
               ),
 
               // Ikon buku
               Image.asset(
-                'assets/images/diary.png', 
+                'assets/images/diary.png',
                 width: 120, // Sesuaikan lebar gambar
                 height: 120, // Sesuaikan tinggi gambar
               ),
@@ -141,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/register');
                 },
-                child: Text('Belum punya akun? Register'),
+                child: Text('Dont have account? Register Here'),
               ),
             ],
           ),

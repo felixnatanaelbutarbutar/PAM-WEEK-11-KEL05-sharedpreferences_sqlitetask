@@ -53,7 +53,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -64,9 +64,11 @@ class _RegisterPageState extends State<RegisterPage> {
               Text(
                 'My Diary',
                 style: GoogleFonts.dancingScript(
-                  fontSize: 56,
+                  fontSize: 56, // Ukuran font besar
                   fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(221, 0, 0, 0),
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white
+                      : const Color.fromARGB(221, 0, 0, 0),
                 ),
               ),
 
@@ -134,7 +136,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 },
                 child: Text(
                   'Already have an account? Login here',
-                  style: TextStyle(fontSize: 16, color: Colors.orange),
                 ),
               ),
             ],
